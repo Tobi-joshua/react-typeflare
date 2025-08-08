@@ -18,7 +18,7 @@ yarn add react-typeflare
 
 ## 🚀 Usage
 
-```jsx
+```js
 import React from 'react';
 import { TypeFlare } from 'react-typeflare';
 
@@ -104,18 +104,32 @@ export default function App() {
 
 ## ⚙️ Props
 
-| Prop               | Type       | Default        | Description                               |
-|--------------------|------------|----------------|-------------------------------------------|
-| `words`            | `string[]` | `[]`           | List of phrases to type                   |
-| `typingSpeed`      | `number`   | `100`          | ms per character typed                    |
-| `deletingSpeed`    | `number`   | `50`           | ms per character deleted                  |
-| `delayBetweenWords`| `number`   | `1500`         | Delay before typing next word             |
-| `startDelay`       | `number`   | `0`            | Delay before animation starts             |
-| `loop`             | `boolean`  | `true`         | Repeat indefinitely                       |
-| `reverse`          | `boolean`  | `false`        | Loop backwards when finished              |
-| `pauseOnHover`     | `boolean`  | `false`        | Pause typing when hovered                 |
-| `className`        | `string`   | `''`           | Custom class for wrapper                  |
-| `cursor`           | `boolean`  | `true`         | Show blinking cursor                      |
-| `cursorChar`       | `string`   | `|`            | Character for cursor                      |
-| `cursorClassName`  | `string`   | `"tf-cursor"`  | Class for cursor styling                  |
-| `onComplete`       | `function` | `() => {}`     | Callback after completion (if not looping)|
+| Prop               | Type       | Default       | Description                                 |
+|--------------------|------------|---------------|---------------------------------------------|
+| `words`            | `string[]` | `[]`          | List of phrases to type                      |
+| `typingSpeed`      | `number`   | `100`         | Milliseconds per character typed            |
+| `deletingSpeed`    | `number`   | `50`          | Milliseconds per character deleted          |
+| `delayBetweenWords`| `number`   | `1500`        | Delay before typing the next word            |
+| `startDelay`       | `number`   | `0`           | Delay before animation starts                |
+| `loop`             | `boolean`  | `true`        | Repeat animation indefinitely                |
+| `reverse`          | `boolean`  | `false`       | Loop backwards when finished                  |
+| `pauseOnHover`     | `boolean`  | `false`       | Pause typing when hovered                    |
+| `className`        | `string`   | `''`          | Custom CSS class for the wrapper             |
+| `cursor`           | `boolean`  | `true`        | Show blinking cursor                          |
+| `cursorChar`       | `string`   | `|`           | Character used as the cursor                  |
+| `cursorClassName`  | `string`   | `"tf-cursor"` | CSS class for cursor styling                  |
+| `onComplete`       | `function` | `() => {}`    | Callback after completion (if not looping)  |
+
+
+---
+
+## License
+
+MIT License © 2025 [Tobi Joshua Samuel]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy  
+of this software and associated documentation files (the "Software"), to deal  
+in the Software without restriction, including without limitation the rights  
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell  
+copies of the Software, and to permit persons to whom the Software is  
+furnished to do so, subject to the following conditions:
