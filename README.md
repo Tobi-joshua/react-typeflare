@@ -1,6 +1,6 @@
 # 🎯 React Typeflare
 
-React TypeFlare is a lightweight, easy-to-use, and highly customizable React component that creates beautiful typewriter-style text animations. It supports smooth typing and deleting effects, configurable speeds, looping options, pause-on-hover, reverse typing, and visual flair like confetti bursts and cursor customization. Ideal for adding engaging dynamic text in React applications with minimal setup.
+A lightweight, customizable typewriter effect component for React.
 
 ---
 
