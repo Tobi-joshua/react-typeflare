@@ -19,4 +19,13 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   devtool: 'source-map',
+
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'example'),
+    },
+    port: 3000,
+    open: true,
+    hot: true,
+  },
 };

@@ -6,29 +6,7 @@
 </head>
 <body>
   <div id="root"></div>
+  <!-- Compiled by webpack -->
   <script src="bundle.js"></script>
 </body>
 </html>
-<script>
-  // This script is just a placeholder for the demo.
-  // The actual functionality is handled by the React component.
-  document.getElementById('root').innerHTML = '<h1>TypeFlare Demo</h1>';
-</script>
-<script src="https://unpkg.com/react/umd/react.production.min.js"></script>
-<script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
-<script src="https://unpkg.com/react-typeflare/dist/react-typeflare.umd.js"></script>
-<script>
-  const { TypeFlare } = window.ReactTypeflare;
-  const App = () => (
-    <div style={{ fontSize: '2rem', fontFamily: 'monospace', padding: '2rem' }}>
-      <TypeFlare
-        words={['Hello, World!', 'I am a React-Typeflare Component.', 'Install me from NPM.']}
-        typingSpeed={120}
-        deletingSpeed={60}
-        delayBetweenWords={1000}
-        loop={true}
-      />
-    </div>
-  );
-  ReactDOM.render(<App />, document.getElementById('root'));
-</script>
