@@ -41,7 +41,19 @@ export default function App() {
 }
 ```
 
+## Demos
 
+### Basic Usage with Confetti  
+![Basic Usage with Confetti](./assets/basic_usage_with_confetti-ezgif.com-optimize.gif)
+
+### Different Typing & Deleting Speeds  
+![Different Typing & Deleting Speeds](./assets/DifferentTypingDeletingSpeeds-ezgif.com-video-to-gif-converter.gif)
+
+### Custom Styling with Colors & Confetti  
+![Custom Styling with Colors & Confetti](./assets/CustomStylingwithColorsConfetti-ezgif.com-video-to-gif-converter.gif)
+
+### Multiple TypeFlare Components Stacked + Mixed Effects  
+![Multiple TypeFlare Components Stacked + Mixed Effects](./assets/MultipleTypeFlareComponentsStackedMixedEffects-ezgif.com-video-to-gif-converter.gif)
 
 
 
