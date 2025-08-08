@@ -3,7 +3,6 @@
 ![npm version](https://img.shields.io/npm/v/react-typeflare?color=blue&style=flat-square)
 ![npm downloads](https://img.shields.io/npm/dm/react-typeflare?color=green&style=flat-square)
 ![license](https://img.shields.io/npm/l/react-typeflare?color=orange&style=flat-square)
-![build status](https://img.shields.io/github/actions/workflow/status/Tobi-joshua/react-typeflare/ci.yml?branch=main&style=flat-square)
 
 
 React TypeFlare is a lightweight, easy-to-use, and highly customizable React component that creates beautiful typewriter-style text animations. It supports smooth typing and deleting effects, configurable speeds, looping options, pause-on-hover, reverse typing, and visual flair like confetti bursts and cursor customization. Ideal for adding engaging dynamic text in React applications with minimal setup.
