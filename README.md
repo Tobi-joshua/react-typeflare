@@ -1,7 +1,7 @@
 # 🎯 React Typeflare
 
 ![npm version](https://img.shields.io/npm/v/react-typeflare?color=blue&style=flat-square)
-![npm downloads](https://img.shields.io/npm/dm/react-typeflare?color=green&style=flat-square)
+![npm downloads](https://www.npmjs.com/package/react-typeflare)
 ![license](https://img.shields.io/npm/l/react-typeflare?color=orange&style=flat-square)
 
 
