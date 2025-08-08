@@ -1,70 +1,44 @@
 # 🎯 React Typeflare
 
-A modern React project for building fast, interactive web applications.
-
-## ✨ Features
-
-- ⚡️ Fast and responsive UI
-- 🛠 Built with React and modern tooling
-- 📦 Easy to extend and customize
+A lightweight, customizable typewriter effect component for React.
 
 ---
 
-## 🚀 Getting Started
+## 📦 Installation
+
+You can install via **npm** or **yarn**:
 
 ```bash
-git clone https://github.com/Tobi-joshua/react-typeflare.git
-cd react-typeflare
-npm install
-npm start
+npm install react-typeflare
+# or
+yarn add react-typeflare
 ```
-
-## 📜 Scripts
-
-- `npm start` — Start the development server  
-- `npm run build` — Build for production  
-- `npm test` — Run tests  
 
 ---
 
-## 📦 Manual Setup Without create-react-app
+## 🚀 Usage
 
-If you prefer to manually set up React without using `npx create-react-app`, follow these steps:
+```jsx
+import React from 'react';
+import { TypeFlare } from 'react-typeflare';
 
-```bash
-mkdir react-typeflare
-cd react-typeflare
-npm init -y
-npm install react react-dom
-npm install --save-dev parcel
-```
-
-**Directory structure:**
-
-```
-react-typeflare/
- ├── package.json
- ├── index.html
- ├── src/
- │    ├── index.js
- │    └── App.js
-```
-
-**index.html**
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>React Typeflare</title>
-</head>
-<body>
-  <div id="root"></div>
-  <script src="./src/index.js"></script>
-</body>
-</html>
+export default function App() {
+  return (
+    <div style={{ fontSize: '2rem', fontFamily: 'monospace' }}>
+      <TypeFlare
+        words={[
+          'Hello, World!',
+          'I am a React-Typeflare Component.',
+          'Install me from NPM.'
+        ]}
+        typingSpeed={120}
+        deletingSpeed={60}
+        delayBetweenWords={1000}
+        loop
+      />
+    </div>
+  );
+}
 ```
 
 ---
