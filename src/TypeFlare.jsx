@@ -1,4 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
+import confetti from 'canvas-confetti';
+import Particles from 'react-tsparticles';
 
 const TypeFlare = ({
   words = [],
@@ -13,12 +15,16 @@ const TypeFlare = ({
   cursor = true,
   cursorChar = '|',
   cursorClassName = 'tf-cursor',
+  confettiOnComplete = false,
+  starsOnWordChange = false,
   onComplete = () => {},
+  onWordChange = () => {}
 }) => {
   const [text, setText] = useState('');
   const [wordIndex, setWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [paused, setPaused] = useState(false);
+  const [showStars, setShowStars] = useState(false);
   const completeRef = useRef(false);
 
   useEffect(() => {
@@ -46,18 +52,28 @@ const TypeFlare = ({
         setIsDeleting(true);
       } else if (isDeleting && text === '') {
         setIsDeleting(false);
-        setWordIndex(prev => {
-          if (!loop && prev + 1 >= words.length) {
-            if (!completeRef.current) {
-              completeRef.current = true;
-              onComplete();
+        const nextIndex = reverse
+          ? (wordIndex - 1 + words.length) % words.length
+          : wordIndex + 1;
+
+        if (!loop && nextIndex >= words.length) {
+          if (!completeRef.current) {
+            completeRef.current = true;
+            onComplete();
+            if (confettiOnComplete) {
+              confetti({ particleCount: 200, spread: 70, origin: { y: 0.6 } });
             }
-            return prev;
           }
-          return reverse
-            ? (prev - 1 + words.length) % words.length
-            : prev + 1;
-        });
+          return;
+        }
+
+        setWordIndex(nextIndex);
+        onWordChange(nextIndex);
+
+        if (starsOnWordChange) {
+          setShowStars(true);
+          setTimeout(() => setShowStars(false), 1500);
+        }
       }
 
       typingTimeout = setTimeout(type, nextDelay);
@@ -69,15 +85,39 @@ const TypeFlare = ({
   }, [text, isDeleting, wordIndex, paused, words.length]);
 
   return (
-    <span
-      className={className}
-      aria-live="polite"
-      onMouseEnter={() => pauseOnHover && setPaused(true)}
-      onMouseLeave={() => pauseOnHover && setPaused(false)}
-    >
-      {text}
-      {cursor && <span className={cursorClassName}>{cursorChar}</span>}
-    </span>
+    <>
+      <span
+        className={className}
+        aria-live="polite"
+        onMouseEnter={() => pauseOnHover && setPaused(true)}
+        onMouseLeave={() => pauseOnHover && setPaused(false)}
+      >
+        {text}
+        {cursor && <span className={cursorClassName}>{cursorChar}</span>}
+      </span>
+
+      {showStars && (
+        <Particles
+          options={{
+            particles: {
+              number: { value: 30 },
+              shape: { type: 'star' },
+              size: { value: 5 },
+              move: { speed: 3 },
+              opacity: { value: 0.8 }
+            }
+          }}
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            zIndex: -1
+          }}
+        />
+      )}
+    </>
   );
 };
 

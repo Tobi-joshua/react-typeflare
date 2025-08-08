@@ -41,6 +41,26 @@ export default function App() {
 }
 ```
 
+
+
+
+
+## ✨ Highlights Compared to `react-typed`
+
+✅ **Single prop (`words`) array** – no need to wrap text in strings or children elements.
+
+✅ **Built-in deleting speed control (`deletingSpeed`)** without extra config hacks.
+
+✅ **Delay between words (`delayBetweenWords`)** is first-class.
+
+✅ **Reverse looping (`reverse`)** – type forward then backward seamlessly.
+
+✅ **Pause on hover (`pauseOnHover`)** without writing custom handlers.
+
+✅ **Simpler API for cursor customization** (`cursor`, `cursorChar`, `cursorClassName`).
+
+✅ **`onComplete` callback** without manually tracking Typed.js events.
+
 ---
 
 ## 🌐 CDN Example
