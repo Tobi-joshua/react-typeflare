@@ -7,7 +7,6 @@ import SpeedExample from './SpeedExample';
 import ColorsExample from './ColorsExample';
 import MultipleLinesExample from './MultipleLinesExample';
 
-
 const App = () => (
   <Box
     sx={{
