@@ -7,7 +7,16 @@
     "start": "webpack serve --mode development --open",
     "build": "webpack --mode production"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "typewriter",
+    "typing-effect",
+    "typeflare",
+    "react-typeflare",
+    "react-component",
+    "confetti",
+    "animation"
+  ],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
