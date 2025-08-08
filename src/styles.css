@@ -1,0 +1,24 @@
+.tf-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tf-stars-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tf-text {
+  position: relative;
+  z-index: 2;
+}
+
+.custom-colored-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+}

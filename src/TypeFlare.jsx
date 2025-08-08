@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import confetti from 'canvas-confetti';
 import Particles from 'react-tsparticles';
+import './styles.css';
+
 
 const TypeFlare = ({
   words = [],
@@ -12,11 +14,15 @@ const TypeFlare = ({
   reverse = false,
   pauseOnHover = false,
   className = '',
+  style = {},                 
   cursor = true,
-  cursorChar = '|',
+  cursorChar = '',
   cursorClassName = 'tf-cursor',
   confettiOnComplete = false,
   starsOnWordChange = false,
+  // optional helpers:
+  wordColors = [],          
+  wordStyles = [],          
   onComplete = () => {},
   onWordChange = () => {}
 }) => {
@@ -33,9 +39,9 @@ const TypeFlare = ({
     let typingTimeout;
     const currentWord = words[wordIndex % words.length];
 
-    const type = () => {
+    const tick = () => {
       if (paused) {
-        typingTimeout = setTimeout(type, 200);
+        typingTimeout = setTimeout(tick, 200);
         return;
       }
 
@@ -47,10 +53,25 @@ const TypeFlare = ({
 
       let nextDelay = isDeleting ? deletingSpeed : typingSpeed;
 
+      // word fully typed
       if (!isDeleting && text === currentWord) {
         nextDelay = delayBetweenWords;
         setIsDeleting(true);
-      } else if (isDeleting && text === '') {
+
+        if (confettiOnComplete) {
+          confetti({
+            particleCount: 120,
+            spread: 70,
+            origin: { y: 0.6 }
+          });
+        }
+
+        if (starsOnWordChange) {
+          setShowStars(true);
+          setTimeout(() => setShowStars(false), 1500);
+        }
+      }
+      else if (isDeleting && text === '') {
         setIsDeleting(false);
         const nextIndex = reverse
           ? (wordIndex - 1 + words.length) % words.length
@@ -60,34 +81,33 @@ const TypeFlare = ({
           if (!completeRef.current) {
             completeRef.current = true;
             onComplete();
-            if (confettiOnComplete) {
-              confetti({ particleCount: 200, spread: 70, origin: { y: 0.6 } });
-            }
           }
           return;
         }
 
         setWordIndex(nextIndex);
         onWordChange(nextIndex);
-
-        if (starsOnWordChange) {
-          setShowStars(true);
-          setTimeout(() => setShowStars(false), 1500);
-        }
       }
 
-      typingTimeout = setTimeout(type, nextDelay);
+      typingTimeout = setTimeout(tick, nextDelay);
     };
 
-    typingTimeout = setTimeout(type, startDelay || typingSpeed);
+    typingTimeout = setTimeout(tick, startDelay || typingSpeed);
 
     return () => clearTimeout(typingTimeout);
   }, [text, isDeleting, wordIndex, paused, words.length]);
 
+  const appliedWordStyle =
+    wordStyles && wordStyles.length ? wordStyles[wordIndex % wordStyles.length] : {};
+  const appliedColor =
+    wordColors && wordColors.length ? { color: wordColors[wordIndex % wordColors.length] } : {};
+  const combinedStyle = { ...style, ...appliedColor, ...appliedWordStyle };
+
   return (
-    <>
+    <span className="tf-wrapper" style={{ position: 'relative', display: 'inline-block' }}>
       <span
-        className={className}
+        className={`tf-text ${className}`}
+        style={{ ...combinedStyle, position: 'relative', zIndex: 2 }}
         aria-live="polite"
         onMouseEnter={() => pauseOnHover && setPaused(true)}
         onMouseLeave={() => pauseOnHover && setPaused(false)}
@@ -97,27 +117,22 @@ const TypeFlare = ({
       </span>
 
       {showStars && (
-        <Particles
-          options={{
-            particles: {
-              number: { value: 30 },
-              shape: { type: 'star' },
-              size: { value: 5 },
-              move: { speed: 3 },
-              opacity: { value: 0.8 }
-            }
-          }}
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            zIndex: -1
-          }}
-        />
+        <div className="tf-stars-container" aria-hidden>
+          <Particles
+            options={{
+              particles: {
+                number: { value: 30 },
+                shape: { type: 'star' },
+                size: { value: 5 },
+                move: { speed: 3 },
+                opacity: { value: 0.8 }
+              }
+            }}
+           
+          />
+        </div>
       )}
-    </>
+    </span>
   );
 };
 
