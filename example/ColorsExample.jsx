@@ -14,7 +14,7 @@ export default function ColorsExample() {
       }}
     >
       <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
-        3. Custom Styling with Colors & Confetti
+        Custom Styling with Colors & Confetti
       </Typography>
       <Divider sx={{ marginBottom: '1rem' }} />
       <TypeFlare

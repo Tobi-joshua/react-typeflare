@@ -14,7 +14,7 @@ export default function BasicExample() {
       }}
     >
       <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
-        1. Basic Usage with Confetti
+        Basic Usage with Confetti
       </Typography>
       <Divider sx={{ marginBottom: '1rem' }} />
       <TypeFlare
@@ -23,7 +23,7 @@ export default function BasicExample() {
           'I am a React-TypeFlare Component.',
           'Install me from NPM.',
         ]}
-        typingSpeed={200}
+        typingSpeed={20}
         deletingSpeed={60}
         delayBetweenWords={1000}
         loop

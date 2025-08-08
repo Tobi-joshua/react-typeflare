@@ -3,10 +3,10 @@ import { createRoot } from 'react-dom/client';
 import { Box } from '@mui/material';
 
 import BasicExample from './BasicExample';
-// import SpeedExample from './SpeedExample';
-// import ColorsExample from './ColorsExample';
-// import MultipleLinesExample from './MultipleLinesExample';
-// import InputExample from './InputExample';
+import SpeedExample from './SpeedExample';
+import ColorsExample from './ColorsExample';
+import MultipleLinesExample from './MultipleLinesExample';
+
 
 const App = () => (
   <Box
@@ -18,10 +18,9 @@ const App = () => (
     }}
   >
     <BasicExample />
-    {/* <SpeedExample />
+    <SpeedExample />
     <ColorsExample />
     <MultipleLinesExample />
-    <InputExample /> */}
   </Box>
 );
 

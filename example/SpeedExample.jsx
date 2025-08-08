@@ -14,7 +14,7 @@ export default function SpeedExample() {
       }}
     >
       <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
-        2. Different Typing & Deleting Speeds + Stars
+        Different Typing & Deleting Speeds
       </Typography>
       <Divider sx={{ marginBottom: '1rem' }} />
       <TypeFlare

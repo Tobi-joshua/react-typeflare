@@ -14,7 +14,7 @@ export default function MultipleLinesExample() {
       }}
     >
       <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
-        4. Multiple TypeFlare Components Stacked + Mixed Effects
+        Multiple TypeFlare Components Stacked + Mixed Effects
       </Typography>
       <Divider sx={{ marginBottom: '1rem' }} />
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
