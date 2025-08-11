@@ -1,33 +1,17 @@
 {
   "name": "react-typeflare",
   "version": "1.0.4",
-  "description": "",
   "main": "dist/index.js",
   "types": "dist/types/react-typeflare.d.ts",
-  "scripts": {
-    "start": "webpack serve --mode development --open",
-    "build": "webpack --mode production && npm run copy-types",
-    "copy-types": "cpx \"src/types/*.d.ts\" dist/types"
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
   },
-  "keywords": [
-    "react",
-    "typewriter",
-    "typing-effect",
-    "typeflare",
-    "react-typeflare",
-    "react-component",
-    "confetti",
-    "animation"
-  ],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/material": "^7.3.1",
     "canvas-confetti": "^1.9.3",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
     "react-tsparticles": "^2.12.2"
   },
   "devDependencies": {

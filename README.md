@@ -13,15 +13,26 @@ React TypeFlare is a lightweight, easy-to-use, and highly customizable React com
 
 ## 📦 Installation
 
-You can install via **npm** or **yarn**:
+You can install the latest version via **npm** or **yarn**:
 
 ```bash
-npm install react-typeflare
+npm install react-typeflare@1.0.4
 # or
-yarn add react-typeflare
-```
+yarn add react-typeflare@1.0.4
 
 ---
+
+## Peer Dependencies
+
+`react-typeflare` requires **React** and **ReactDOM** as peer dependencies. This means these packages must be installed in your project separately.
+
+To install them along with their TypeScript types, run:
+
+```bash
+npm install react react-dom @types/react @types/react-dom
+# or with yarn
+yarn add react react-dom @types/react @types/react-dom
+
 
 ## 🚀 Usage
 
