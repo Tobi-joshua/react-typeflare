@@ -16,9 +16,9 @@ React TypeFlare is a lightweight, easy-to-use, and highly customizable React com
 You can install the latest version via **npm** or **yarn**:
 
 ```bash
-npm install react-typeflare@1.0.4
+npm install react-typeflare@latest
 # or
-yarn add react-typeflare@1.0.4
+yarn add react-typeflare@latest
 
 ---
 
