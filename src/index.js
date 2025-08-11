@@ -1,0 +1,1 @@
+export { default as TypeFlare } from './TypeFlare';
