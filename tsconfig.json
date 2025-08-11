@@ -4,6 +4,8 @@
     "lib": ["dom", "es2015"],
     "module": "ESNext",
     "moduleResolution": "node",
+    "declaration": true,
+    "declarationDir": "dist/types",
     "jsx": "react",
     "allowJs": true,
     "strict": true,
