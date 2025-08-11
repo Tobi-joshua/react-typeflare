@@ -1,13 +1,13 @@
 {
   "name": "react-typeflare",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/types/react-typeflare.d.ts",
   "scripts": {
     "start": "webpack serve --mode development --open",
-     "build": "webpack --mode production && npm run copy-types",
-     "copy-types": "cpx \"src/types/*.d.ts\" dist/types"
+    "build": "webpack --mode production && npm run copy-types",
+    "copy-types": "cpx \"src/types/*.d.ts\" dist/types"
   },
   "keywords": [
     "react",
