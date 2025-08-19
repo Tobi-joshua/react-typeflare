@@ -1,6 +1,7 @@
 {
   "name": "react-typeflare",
   "version": "1.0.10",
+  "description": "A lightweight and customizable React component for typewriter-style text animations with special effects.",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/types/index.d.ts",
@@ -43,5 +44,23 @@
   },
   "dependencies": {
     "canvas-confetti": "^1.9.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tobi-joshua/react-typeflare.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Tobi-joshua/react-typeflare/issues"
+  },
+  "homepage": "https://github.com/Tobi-joshua/react-typeflare#readme",
+  "author": "Tobi Joshua",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "typewriter",
+    "animation",
+    "typing",
+    "react-component",
+    "confetti"
+  ]
 }
