@@ -1,36 +1,30 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-  entry: './src/index.js',         
+  entry: "./src/index.tsx",
+   mode: 'production',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'index.js',
+    path: path.resolve(__dirname, "dist"),
+    filename: "index.js",
     library: {
-      name: 'react-typeflare',
-      type: 'commonjs2',            
+      type: "umd",
     },
-    clean: true,
+    globalObject: "this",
+  },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
   },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader',
-      },
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: "babel-loader",
       },
     ],
   },
-  resolve: {
-    extensions: ['.js', '.jsx'],
-  },
   externals: {
-    react: 'react',                 
-    'react-dom': 'react-dom',
+    react: "react",
+    "react-dom": "react-dom",
   },
-  devtool: 'source-map',
-  mode: 'production',
 };
