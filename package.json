@@ -1,6 +1,6 @@
 {
   "name": "react-typeflare",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "A lightweight and customizable React component for typewriter-style text animations with special effects.",
   "main": "dist/index.js",
   "module": "dist/index.js",
